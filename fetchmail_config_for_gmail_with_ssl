@@ -1,0 +1,49 @@
+#########################################################
+## SET FETCHMAIL to google with TSL
+#########################################################
+## edit file
+vi ~/.fetchmailrc
+# Add:
+
+  #set syslog
+  poll imap.gmail.com with protocol IMAP service 993
+  #user "JOURNAME@gmail.com" there with
+  user "EMAIL@gmail.com" there with
+  password "YOUR PWD HERE"
+  is LOCAL_USER@DOMAIN here
+  #options
+  #fetchlimit 1
+  #mda "/usr/bin/procmail -d %T"
+  keep
+  sslcertck
+  sslcertpath ~/.fetchmail/ssl
+
+# set rights for file
+chmod 600 ~/.fetchmailrc
+
+###################################### CERT download and config
+
+mkdir -p ~/.fetchmail/ssl
+cd ~/.fetchmail/ssl
+
+echo |
+openssl s_client -connect imap.gmail.com:993 -showcerts 2>/dev/null |
+sed -ne '/BEGIN CERT/,/END CERT/p' > mail.gmail.com.pem
+
+# for RHEL flavour Linux - apt-get or pacman could be used same way
+sudo yum install openssl-perl
+
+c_rehash ~/.fetchmail/ssl
+
+# test
+
+fetchmai -vvv
+
+#### compiled from - all of em' are someway inaccurate but you can find more info there
+# Extensive manual for Ubuntu
+# https://help.ubuntu.com/community/MuttAndGmail
+# http://lifehacker.com/5574557/how-to-use-the-fast-and-powerful-mutt-email-client-with-gmail
+# SSL cert download:
+# https://grox.net/sysadm/net/fetchmail.ssl
+
+ 
