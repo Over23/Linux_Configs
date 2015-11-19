@@ -1,2 +1,2 @@
-# Linux_Configs
-Save of useful Linux config and its templates
+# Useful configurations for Linux [usually RHEL]
+- be careful, it is list of howtos not for direct copy and paste
