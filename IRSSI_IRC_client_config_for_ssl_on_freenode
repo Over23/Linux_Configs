@@ -1,0 +1,39 @@
+##################### SSL for IRC repsective IRSSI for Freenode #######################
+
+# prepare irssi to be able to accept scripts
+# and download sasl.pl autentification script
+
+mkdir -pv $HOME/.irssi/scripts/autorun && cd $HOME/.irssi/scripts && \
+wget wget http://scripts.irssi.org/scripts/cap_sasl.pl && \
+cd autorun && ln -sv ../cap_sasl.pl
+
+# prepare dir for cert
+# and download cert of freenode
+# convert cert
+# link cert to standard cert dir
+
+mkidr -p /usr/share/ca-certificates/gandi.net
+cd /usr/share/ca-certificates/gandi.net
+wget http://crt.gandi.net/GandiStandardSSLCA.crt
+openssl x509 -inform der -outform pem < /usr/share/ca-certificates/gandi.net/GandiStandardSSLCA.crt > GandiStandardSSLCA.pem
+ln -s /usr/share/ca-certificates/gandi.net/GandiStandardSSLCA.pem /etc/ssl/certs/GandiStandardSSLCA.pem
+
+# start sasl script inside of Irssi 
+# >> Irssi commands:
+/script load autorun/cap_sasl.pl
+/sasl set Freenode <primary-nick> <password> DH-BLOWFISH
+/sasl save
+/save
+
+# basic config of autoconnect to freenode by ssl
+/server add -auto -ssl -network freenode irc.freenode.net 6697
+
+ 
+#### taken and compiled from docs, where you can find more info but all of em' is some way incomplete
+# Really nice IRSSI manual: https://pthree.org/2010/02/02/irssis-channel-network-server-and-connect-what-it-means/
+# Basics of SSL for IRC: http://ubuntuforums.org/archive/index.php/t-1010780.html
+# -> wget path is wrong there: wget http://scripts.irssi.org/scripts/cap_sasl.pl
+# More here: https://pthree.org/2010/01/31/freenode-ssl-and-sasl-authentication-with-irssi/
+# And here is freenode original howto: https://freenode.net/sasl/sasl-irssi.shtml
+
+ 
