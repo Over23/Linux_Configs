@@ -1,0 +1,38 @@
+# ===============
+# test questions
+# ================
+# 1] login as idontcare
+# 2] download questions according message of the day
+# 3] configure server to allow ssh as root by key
+# 4] configure sudo to allow user idontcare to be able to use sudo without password for all commands
+# 5] start Apache
+# 6] delete files in /home/idontcare/delete_me/; but only delete_me*.to.del in range 0003 to 0105, other should stay intact
+# 7] customer is complaining, there are no files in /cdrom directory and he deleted nothing
+# 8] find biggest files
+# 9] there is huge file in /home/idontcare find it and delete it
+# 10] do sha256 of iso in /home/idontcare : ad30b003a5face0477177d4980c5c26ba75df21de069612d9fa59ac3ab613aeb
+#       10.1] do sha512 of same iso, and explain what is diffrence, why, and what this commands are for
+# 11] can you imagine how to generate (pseudo)random 10 characters long sting [that could be e.g. used as passowrd]
+
+
+#username: idontcare
+#passwd : iam too lame
+#root passwd: this is root password
+#private key : SSH format
+#careful, every line is hashed
+
+#-----BEGIN RSA PRIVATE KEY-----
+#MIICWwIBAAKBgQDntBEeRGY7PaaINO0mLIt+tG3Mloe7AWtUdRpeArLrEFlVtxMz
+#hBqnYBNsrGhBHOSM3bffZeFX6V0MUJvv1idr6XGu5pB+4FOKmCV8AmC/c2aihytp
+#wrVQ1L+CZTw8yglG3StJxCgrtuFFRroSp13KRB5S/zRXoo8cVieBim+adQICAQEC
+#gYBFa71oseDe8ph+eXHimM0n9FC103Nf3426rIxh5OrlzhzCBgq7wvkLTJk+cWnx
+#pAyxrQNK5r4JZ8kzgL4o+m9rdyh/VSeP4KTANLXxU39oDFdY8ASvDu3tkFWLUm8n
+#Ie2anaSWw6wcOK8OtwvBu8+0Gu+Rk8ZZ5XUEunMki0pF4QJBAPvWgWK8wRp8QCPC
+#IHEM2gfSa5wz2r5W9bZn+gSinx90jHkpsguORzDRy8hqFlYdteAWC/Gm/4Qdekq3
+#O3lujIkCQQDriF/zPxLAyK5Wvka5zzpZqTKlS6p4xeUermDtDAcbaxAaANJkCFR1
+#wIrfhdYdkXwXbapO4ArUIEJ4j4zs+9uNAkEAoLS2LRPX3Rp+mFAMu7CLIeDsBA0q
+#9vi8rC5tvTry/SmAfSGUeuw5YeSCClmcsniP85qFIa1OYkChtic63uvmIQJAf2Oo
+#cKKckhrbzUwEYoEDqwPapRr6lP508rX4qA16YYGgHgBxyoX/3BN37249BQj1a00+
+#OpkM1Fkq7IloHJAwBQJAd1nEDU1L0R9qUlJfu1IAtgE/F1mLy1JHNZBV2HpZr4ln
+#KuK3itFrmXfa2CMeGI2NdjsaUE5jn/GoEr6XeX/xZg==
+#-----END RSA PRIVATE KEY-----
