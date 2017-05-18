@@ -13,6 +13,9 @@
 # 10] do sha256 of iso in /home/idontcare : ad30b003a5face0477177d4980c5c26ba75df21de069612d9fa59ac3ab613aeb
 #       10.1] do sha512 of same iso, and explain what is diffrence, why, and what this commands are for
 # 11] can you imagine how to generate (pseudo)random 10 characters long sting [that could be e.g. used as passowrd]
+# 12] Every day at 18:15 and 6:15 run following: check how much space is consumed
+on all disks and save the output to /tmp/diskfree-<date-timestamp>.log
+
 
 
 #username: idontcare
