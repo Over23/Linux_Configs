@@ -2,6 +2,8 @@
 ###  HAND OVER TO TESTED PERSON  
 ### ===========================
 
+### test edit to showtime on IRC
+
 ###  server info
 ### -------------
 #username: idontcare
